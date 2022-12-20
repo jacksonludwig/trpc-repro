@@ -8,12 +8,12 @@ import Example from './Example';
 export const trpc = createTRPCReact<AppRouter>();
 
 export default function App() {
-   const [queryClient] = useState(() => new QueryClient());
+  const [queryClient] = useState(() => new QueryClient());
   const [trpcClient] = useState(() =>
     trpc.createClient({
       links: [
         httpBatchLink({
-          url: 'PUT_SERVER_URL_HERE_AFTER_DEPLOY',
+          url: 'https://s0p9p0ra3g.execute-api.us-east-1.amazonaws.com/dev/',
         }),
       ],
     }),

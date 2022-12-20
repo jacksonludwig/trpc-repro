@@ -4,8 +4,10 @@ import { trpc } from "./App"
 const Example = () => {
   const q1 = trpc.testRoute.useQuery();
   const q2 = trpc.testRoute.useQuery();
+  const q3 = trpc.testRoute.useQuery();
+  const q4 = trpc.testRoute.useQuery();
 
-  if (q1.isLoading)
+  if (q1.isLoading || q2.isLoading)
     return (
       <View>
         <ActivityIndicator size='large' />
