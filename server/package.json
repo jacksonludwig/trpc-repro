@@ -1,0 +1,36 @@
+{
+  "name": "server",
+  "version": "2.0.0",
+  "description": "",
+  "scripts": {
+    "start": "node dist/index.js",
+    "build": "tsc"
+  },
+  "keywords": [],
+  "author": "test",
+  "dependencies": {
+    "@tanstack/react-query": "^4.20.4",
+    "@trpc/client": "^10.6.0",
+    "@trpc/next": "^10.6.0",
+    "@trpc/react-query": "^10.6.0",
+    "@trpc/server": "^10.6.0",
+    "@types/aws-lambda": "^8.10.109",
+    "zod": "^3.19.1"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^7.6.0",
+    "@tsconfig/recommended": "^1.0.1",
+    "@types/node": "^18.11.10",
+    "@typescript-eslint/eslint-plugin": "^5.45.0",
+    "@typescript-eslint/parser": "^5.45.0",
+    "aws-cdk-lib": "^2.53.0",
+    "cdk": "^2.53.0",
+    "constructs": "^10.1.177",
+    "esbuild": "^0.15.16",
+    "eslint": "^8.28.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.8.0"
+  }
+}
