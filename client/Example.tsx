@@ -1,11 +1,21 @@
+import { useEffect } from "react";
 import { View, Text, ActivityIndicator } from "react-native";
 import { trpc } from "./App"
 
 const Example = () => {
   const q1 = trpc.testRoute.useQuery();
-  const q2 = trpc.testRoute.useQuery();
-  const q3 = trpc.testRoute.useQuery();
-  const q4 = trpc.testRoute.useQuery();
+  const q2 = trpc.testRoute2.useQuery();
+
+  useEffect(() => {
+    (async () => {
+      while (true) {
+        q1.refetch();
+        q2.refetch();
+        await new Promise((res) => setTimeout(res, 5000));
+        console.log('fetching again');
+      }
+    })();
+  }, []);
 
   if (q1.isLoading || q2.isLoading)
     return (
@@ -16,8 +26,7 @@ const Example = () => {
 
   return (
     <View>
-      <Text>{q1.data.stringValue}</Text>
-      <Text>{q2.data.value}</Text>
+      <Text>test</Text>
     </View>
   )
 }

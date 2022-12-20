@@ -31,6 +31,18 @@ class ExampleStack extends Stack {
     });
 
     restApi.root.addResource('testRoute').addMethod(HttpMethod.GET, new LambdaIntegration(fn));
+
+    const fn2 = new NodejsFunction(this, 'testLambda2', {
+      handler: 'main',
+      entry: join(__dirname, `../index.ts`),
+      memorySize: 256,
+      bundling: {
+        minify: true,
+      },
+      runtime: Runtime.NODEJS_16_X,
+    });
+
+    restApi.root.addResource('testRoute2').addMethod(HttpMethod.GET, new LambdaIntegration(fn2));
   }
 }
 

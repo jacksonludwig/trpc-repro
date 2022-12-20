@@ -11,6 +11,15 @@ const appRouter = router({
       stringValue: 'sdkfja;lsdkjfalsdkjf;alksdjf;laksdjflaksjd;lkfajs;lkj',
     };
   }),
+  testRoute2: procedure.query(async () => {
+    await new Promise((res) => setTimeout(res, 100));
+
+    return {
+      obj: {
+        value: 10,
+      },
+    };
+  }),
 });
 
 export const main = awsLambdaRequestHandler({

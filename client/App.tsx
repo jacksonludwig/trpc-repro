@@ -13,7 +13,7 @@ export default function App() {
     trpc.createClient({
       links: [
         httpBatchLink({
-          url: 'https://s0p9p0ra3g.execute-api.us-east-1.amazonaws.com/dev/',
+          url: 'https://qmn0uzm0pc.execute-api.us-east-1.amazonaws.com/dev/',
         }),
       ],
     }),
